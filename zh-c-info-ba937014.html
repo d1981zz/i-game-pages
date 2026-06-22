@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng28 · 专题介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f4f1;
+            font-family: "Inter", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            color: #1e1e1e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 720px;
+            width: 100%;
+            padding: 2.5rem 1.5rem 4rem;
+            background: #ffffff;
+            margin: 3rem 1.5rem;
+            box-shadow: 0 15px 40px -12px rgba(0, 0, 0, 0.06);
+        }
+
+        /* hero */
+        .hero-area {
+            margin-bottom: 3.5rem;
+            border-bottom: 1px solid #e6e3de;
+            padding-bottom: 2.2rem;
+        }
+
+        .hero-area .label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #8b857f;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-area h1 {
+            font-weight: 450;
+            font-size: 2.2rem;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: #151515;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-area .sub {
+            font-size: 1rem;
+            color: #5f5b57;
+            margin-top: 0.6rem;
+            max-width: 28em;
+        }
+
+        /* 正文区 */
+        .content-block {
+            margin-bottom: 2.8rem;
+        }
+
+        .content-block h2 {
+            font-weight: 440;
+            font-size: 1.3rem;
+            letter-spacing: -0.005em;
+            margin-bottom: 0.9rem;
+            color: #252220;
+            border-left: 3px solid #d1c9c1;
+            padding-left: 0.9rem;
+        }
+
+        .content-block p {
+            margin-bottom: 1.2rem;
+            color: #2b2a29;
+            max-width: 60ch;
+        }
+
+        .content-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .inline-link {
+            color: #1c1c1c;
+            text-decoration: underline;
+            text-decoration-color: #b3aaa2;
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.2s;
+        }
+
+        .inline-link:hover {
+            text-decoration-color: #151515;
+        }
+
+        /* 特点小卡片 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2.8rem 0 2.2rem;
+        }
+
+        .feature-item {
+            flex: 1 1 160px;
+        }
+
+        .feature-item .num {
+            font-size: 1.6rem;
+            font-weight: 380;
+            color: #c3b9af;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-item h3 {
+            font-weight: 450;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: #222020;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #54504c;
+            line-height: 1.5;
+        }
+
+        /* 简单faq片段 */
+        .faq-note {
+            background: #f4f2ef;
+            padding: 1.5rem 1.8rem;
+            margin: 2.8rem 0 2.2rem;
+            border-radius: 2px;
+        }
+
+        .faq-note h3 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #3a3734;
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-note .qa {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-note .qa .q {
+            font-weight: 500;
+            min-width: 4.2em;
+            color: #2f2c29;
+        }
+
+        .faq-note .qa .a {
+            color: #514d48;
+        }
+
+        /* 尾注 */
+        .footer-hint {
+            margin-top: 4rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e6e3de;
+            font-size: 0.92rem;
+            color: #5d5853;
+            line-height: 1.6;
+        }
+
+        .footer-hint a {
+            color: #1e1e1e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c5bdb5;
+        }
+
+        .footer-hint a:hover {
+            text-decoration-color: #151515;
+        }
+
+        @media (max-width: 550px) {
+            .page {
+                margin: 1.5rem 0.8rem;
+                padding: 1.8rem 1rem 2.8rem;
+            }
+
+            .hero-area h1 {
+                font-size: 1.8rem;
+            }
+
+            .feature-grid {
+                gap: 1.2rem;
+            }
+
+            .feature-item {
+                flex: 1 1 100%;
+            }
+
+            .faq-note {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 横幅 -->
+    <div class="hero-area">
+        <div class="label">· 专题 · 简明识别</div>
+        <h1>ng28<br>一个站点，一种入口感</h1>
+        <div class="sub">当你面对一个网址，最先想确定的是：这是不是我需要的地方。本文从识别出发，简述 ng28 的用途与边界。</div>
+    </div>
+
+    <!-- 第一段：背景与直观感受 -->
+    <div class="content-block">
+        <h2>第一眼：它解决什么问题</h2>
+        <p>
+            打开一个不熟悉的页面，人的注意力往往集中在两件事：<strong>这个网站是做什么的</strong>，以及<strong>接下来怎么操作</strong>。<a href="https://zh-c-ng28.com" class="inline-link">ng28</a> 的首页设计偏向直接——没有冗长的引导动画，没有层层弹窗，信息层级倾向于让浏览者快速定位到核心功能区域。对于习惯先扫一眼导航栏或横幅的用户，这种克制反而降低了认知负荷。
+        </p>
+        <p>
+            从实际体验来看，站点将主要路径收敛在几个关键模块内，不刻意渲染紧迫感，也不堆叠无关资讯。这种风格适合那些希望直接进入上下文、不被过度引导的用户。
+        </p>
+    </div>
+
+    <!-- 第二段：用途侧面 + 特征卡片 -->
+    <div class="content-block">
+        <h2>从结构判断使用场景</h2>
+        <p>
+            网站布局通常会透露设计者的意图。在 <a href="https://zh-c-ng28.com" class="inline-link">ng28</a> 的页面上，信息区块之间留有充裕的空白，标题与内容的主次关系清晰。这种排版暗示了内容的工具属性——用户被期待自主阅读、自行判断下一步，而非被一个巨大的按钮牵着走。
+        </p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="num">01</div>
+                <h3>模块化入口</h3>
+                <p>不同功能以独立卡片或段落呈现，避免信息混杂。</p>
+            </div>
+            <div class="feature-item">
+                <div class="num">02</div>
+                <h3>低干扰阅读</h3>
+                <p>页面中的动效与弹窗极少，突出内容本身。</p>
+            </div>
+            <div class="feature-item">
+                <div class="num">03</div>
+                <h3>直白标签</h3>
+                <p>导航与按钮文本多采用实义词，减少隐喻。</p>
+            </div>
+        </div>
+
+        <p>
+            如果你习惯先浏览再操作，这种界面能节省不少时间。反之，如果遇到一个页面到处都是闪烁按钮和倒计时，往往需要多留一个心眼。ng28 的呈现方式，属于前一类。
+        </p>
+    </div>
+
+    <!-- 第三段：一点叙述 + FAQ 片段 -->
+    <div class="content-block">
+        <h2>在实际使用中的感受</h2>
+        <p>
+            有一次我打开这个页面，并没有第一时间去点任何链接，而是先看了几段介绍文字。页面没有催促注册或登录，也没有通过弹窗挡住视线。这让我觉得，运营方至少愿意给用户一个观察的窗口，而不是急于收集点击。
+        </p>
+        <p>
+            当然，一个页面是否值得信赖，不能仅靠视觉判断。但至少从第一印象来说，<a href="https://zh-c-ng28.com" class="inline-link">ng28</a> 没有使用那些令人反感的套路——没有虚假的加载进度条，也没有伪装成系统警告的广告。这种透明度在今天的网页环境中并不常见。
+        </p>
+
+        <div class="faq-note">
+            <h3>常见问题 · 简短摘录</h3>
+            <div class="qa">
+                <span class="q">问：</span>
+                <span class="a">这个站点适合什么样的人？</span>
+            </div>
+            <div class="qa">
+                <span class="q">答：</span>
+                <span class="a">适合想要直接使用功能、不希望被过度引导的用户。页面没有隐藏陷阱，信息相对透明。</span>
+            </div>
+            <div class="qa" style="margin-top: 0.5rem;">
+                <span class="q">问：</span>
+                <span class="a">第一次访问需要注意什么？</span>
+            </div>
+            <div class="qa">
+                <span class="q">答：</span>
+                <span class="a">花一分钟浏览导航和板块标题，确认自己是否找对了地方。链接行为正常，没有异常跳转。</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页尾：访问提示 -->
+    <div class="footer-hint">
+        <p>
+            如果你已经对这个页面有了自己的判断，可以前往 <a href="https://zh-c-ng28.com">ng28</a> 亲自感受一下。页面的实际体验往往比描述更直观——打开它，看看是否符合你的预期。
+        </p>
+        <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #7d7771;">
+            本专题仅提供基于界面与内容的客观描述，不构成任何形式的推荐或担保。
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
